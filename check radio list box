@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class _Default : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        double total = 0;
+
+        double n1 = Convert.ToDouble(num1.SelectedValue);
+        double n2 = Convert.ToDouble(num2.Text);
+        double n3 = Convert.ToDouble(num3.Text);
+        double n4 = Convert.ToDouble(cost1.Text);
+        double n5 = Convert.ToDouble(cost2.Text);
+        double n6 = Convert.ToDouble(cost3.Text);
+
+        if (c1.Checked)
+            total += n1 * n4;
+
+        if (c2.Checked)
+            total += n2 * n5;
+
+        if (c3.Checked)
+            total += n3 * n6;
+
+        all.Text = Convert.ToString(total);
+
+        if (S1.SelectedValue == "s1") 
+            L1.Text = S1.SelectedItem.Text;
+        if (S1.SelectedValue == "s2")
+            L1.Text = S1.SelectedItem.Text;
+        if (S1.SelectedValue == "s3")
+            L1.Text = S1.SelectedItem.Text;
+        if (S1.SelectedValue == "s4")
+            L1.Text = S1.SelectedItem.Text;
+        if (S1.SelectedValue == "s5")
+            L1.Text = S1.SelectedItem.Text;
+
+
+        L2.Text = "";
+        if (Q1.Items[0].Selected)
+            L2.Text = L2.Text + "\r\n" + Q1.Items[0].Text;
+        if (Q1.Items[1].Selected)
+            L2.Text = L2.Text + "\r\n" + Q1.Items[1].Text;
+        if (Q1.Items[2].Selected)
+            L2.Text = L2.Text + "\r\n" + Q1.Items[2].Text;
+        if (Q1.Items[3].Selected)
+            L2.Text = L2.Text + "\r\n" + Q1.Items[3].Text;
+
+    }
+}
